@@ -1,6 +1,7 @@
 # UPY-PROGRAMMING-ROM-N-SOSA-Q2-2026
 Repositorio de trabajo de la materia de Programación de la UPY
 Programación 
+```
 
              / .-
              |/,-'`
@@ -23,3 +24,4 @@ Programación
      8   |   |\|   |    '.__.'
      8   |___|\|___|
      8   |===\_/===|
+```	
