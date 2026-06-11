@@ -1,5 +1,5 @@
 # UPY-PROGRAMMING-ROM-N-SOSA-Q2-2026
-Repositorio de trabajo de la materia de Programación de la UPY
+Repositorio de trabajo de la materia de Programación de la UPY y agregado el CW07: Cálculo de dígito verificador
 Programación 
 ```
 
