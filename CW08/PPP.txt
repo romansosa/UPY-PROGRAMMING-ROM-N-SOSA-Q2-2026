@@ -1,0 +1,51 @@
+# INPUT
+Get a from user                                 
+If "pi" is in a
+    a ← evaluate a replacing "pi" with math.pi
+Else
+    a ← convert a to decimal number
+
+Get b from user                                 
+If "pi" is in b
+    b ← evaluate b replacing "pi" with math.pi
+Else
+    b ← convert a to decimal number            
+Get f_x from user                               
+Get method from user  
+                          
+# PROCESS
+area ← 0.0
+n ← 1000
+h ← (b - a) / n
+shift ← 0
+constant ← 0
+variable ← 0
+
+If method is "TRAP"
+    variable ← 1
+    
+    f_0_str ← replace "x" with a in f_x
+    area ← area + (h / 2) * evaluate(f_0_str)
+    
+    For i from variable to n - 1
+        xi ← a + (i * h)
+        f_xi_str ← replace "x" with xi in f_x
+        area ← area + (h / 2) * 2 * evaluate(f_xi_str)
+        
+    f_xn_str ← replace "x" with b in f_x
+    area ← area + (h / 2) * evaluate(f_xn_str)
+
+If method is "RRM"
+    shift ← 1
+
+If method is "MPM"
+    constant ← h / 2
+
+# BUG: If method is "TRAP", it falls through and executes this loop too
+For i from (0 + shift) to (n - 1 + shift)
+    xi ← a + i * h + constant
+    height ← evaluate f_x replacing "x" with xi
+    area ← area + height * h
+
+# OUTPUT
+Display "The integration of " + f_x + " is " + area formatted to 4 decimals
