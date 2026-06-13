@@ -1,51 +1,90 @@
 # INPUT
-Get a from user                                 
-If "pi" is in a
-    a ← evaluate a replacing "pi" with math.pi
-Else
-    a ← convert a to decimal number
+Display "Select analytical function type for exact verification (1-4):"
+Get func_type from user                         
 
-Get b from user                                 
-If "pi" is in b
-    b ← evaluate b replacing "pi" with math.pi
+Get a_input from user                           
+If "pi" is in a_input
+    a ← evaluate a_input replacing "pi" with math.pi
 Else
-    b ← convert a to decimal number            
+    a ← convert a_input to decimal number
+
+Get b_input from user                           
+If "pi" is in b_input
+    b ← evaluate b_input replacing "pi" with math.pi
+Else
+    b ← convert b_input to decimal number
+
 Get f_x from user                               
-Get method from user  
-                          
+Display "Select mode: 1) Default (n=100, MPM), 2) Custom, 3) Auto-adjust"
+Get mode from user                              
+
+If mode is 1
+    n ← 100
+    method ← "MPM"
+If mode is 2
+    Get n from user                             
+    Display "Select integration method (LRM/RRM/MPM/TRAP):"
+    Get method from user                        
+CB If mode is 3
+    Get target_error from user                  
+    n ← 10                                      
+    method ← "MPM"                              
+
 # PROCESS
-area ← 0.0
-n ← 1000
-h ← (b - a) / n
-shift ← 0
-constant ← 0
-variable ← 0
 
-If method is "TRAP"
-    variable ← 1
+If func_type is 1
+    I_exact ← ((b^3)/3 + b^2 - 3*b) - ((a^3)/3 + a^2 - 3*a)
+If func_type is 2
+    I_exact ← ((3*b^4)/4 - (b^3)/3 + 5*b) - ((3*a^4)/4 - (a^3)/3 + 5*a)
+If func_type is 3
+    I_exact ← (-cos(b)) - (-cos(a))
+If func_type is 4
+    I_exact ← e^b - e^a
+
+
+run_loop ← True
+While run_loop is True
+    h ← (b - a) / n
+    area ← 0.0
+
     
-    f_0_str ← replace "x" with a in f_x
-    area ← area + (h / 2) * evaluate(f_0_str)
-    
-    For i from variable to n - 1
-        xi ← a + (i * h)
-        f_xi_str ← replace "x" with xi in f_x
-        area ← area + (h / 2) * 2 * evaluate(f_xi_str)
+    If method is "TRAP"
+        f_0 ← evaluate f_x replacing "x" with a
+        area ← area + (h / 2) * f_0
+        For i from 1 to n - 1
+            xi ← a + (i * h)
+            f_xi ← evaluate f_x replacing "x" with xi
+            area ← area + (h / 2) * 2 * f_xi
+        f_xn ← evaluate f_x replacing "x" with b
+        area ← area + (h / 2) * f_xn
         
-    f_xn_str ← replace "x" with b in f_x
-    area ← area + (h / 2) * evaluate(f_xn_str)
+    
+    Else
+        shift_val ← 0
+        constant_val ← 0
+        If method is "RRM"
+            shift_val ← 1
+        If method is "MPM"
+            constant_val ← h / 2
 
-If method is "RRM"
-    shift ← 1
+        For i from (0 + shift_val) to (n - 1 + shift_val)
+            xi ← a + i * h + constant_val
+            height ← evaluate f_x replacing "x" with xi
+            area ← area + height * h
 
-If method is "MPM"
-    constant ← h / 2
+    I_numerical ← area
+    E_abs ← |I_exact - I_numerical|
+    E_rel ← (E_abs / |I_exact|) * 100
 
-# BUG: If method is "TRAP", it falls through and executes this loop too
-For i from (0 + shift) to (n - 1 + shift)
-    xi ← a + i * h + constant
-    height ← evaluate f_x replacing "x" with xi
-    area ← area + height * h
+    
+    If mode is 3 and E_rel > target_error
+        n ← n * 2                               
+    Else
+        run_loop ← False                        
 
 # OUTPUT
-Display "The integration of " + f_x + " is " + area formatted to 4 decimals
+Display "Analytical Exact Integral (I_exact): " + I_exact
+Display "Numerical Approximation Output: " + I_numerical
+Display "Subintervals used (n): " + n
+Display "Calculated Absolute Error (E_abs): " + E_abs
+Display "Calculated Relative Error (E_rel): " + E_rel + "%"
