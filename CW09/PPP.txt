@@ -1,0 +1,18 @@
+# Spanish verb conjugator
+
+# PRE-DEFINED STRUCTURES
+$pronouns \leftarrow \text{list containing "Yo", "Tú", "Él", "Nosotros", "Vosotros", "Ellos"}$
+$endings \leftarrow \text{dictionary mapping "ar", "er", "ir" to their respective conjugated ending lists}$
+
+# INPUT
+Get verb from user    # str: e.g. "programar"
+
+# PROCESS
+$stem \leftarrow \text{verb without the last two letters}$                   # extract the base of the verb
+$ending \leftarrow \text{the last two letters of the verb}$                 # identify if it ends in ar, er, or ir
+$conjugations \leftarrow \text{look up } ending \text{ in } endings \text{ dictionary}$   # get the matching list of suffixes
+
+# OUTPUT
+For each index and pronoun in pronouns list:
+    $current\_termination \leftarrow \text{get the element at the index position from } conjugations$
+    Display pronoun + " " + stem + current_termination
