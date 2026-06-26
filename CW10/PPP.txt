@@ -43,11 +43,12 @@ pending <- empty collection
 For each subj in subjects:
     grade <- retrieve note for current_user in subj
     
-    OUTPUT
-    Display subj and grade
-    
     PROCESS
-    If grade is 8.0 or higher:
+    If grade is 7.0 or higher:
+        OUTPUT
+        Display subj and grade
+        
+        PROCESS
         Add subj to approved
     Else:
         Add subj to pending

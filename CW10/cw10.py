@@ -142,8 +142,11 @@ if role == "student":
     
     for subj in subjects:
         grade = notes[current_user][subj]
-        print(f"{subj:<32} : {grade}") 
         
+        
+        if grade >= 7.0:
+            print(f"{subj:<32} : {grade}")
+            
         if grade >= 7.0:
             approved.add(subj)
         else:
