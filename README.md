@@ -61,6 +61,33 @@ Located within the repository `UPY-PROGRAMMING-NAME-LAST_NAME-Q2-2026`, this pro
 - [ ] **1 pt**: AI Use Declaration included.
 - [ ] **Commit message exact match**: `Add Classwork 09 - Spanish Verb Conjugator`
 
+---
+
+# Classwork 10 - School Management System 🏫
+
+## Description
+This project is a Python-based console application that simulates a simple school login and management system. The program features a role-based access control system (RBAC) with three distinct user roles:
+* **Student:** Can view their own approved and pending subjects.
+* **Teacher:** Can view all students and edit/update their grades.
+* **Coordinator:** Has read-only access to view lists of teachers, subjects, and all student records.
+
+The project demonstrates the fundamental use of Python data structures—specifically **lists, tuples, dictionaries, and sets**—along with control flow structures (`while` loops, `if/elif/else`), all implemented without the use of custom functions (`def`).
+
+## Project Structure
+This folder contains the following required files:
+
+* `PPP.txt`: The complete Pseudocode Programming Process (PPP) detailing the logic, iteration flow, and decisions in plain English.
+* `Flowchart.png`: A visual flowchart diagram mapping out the login authentication loop and the distinct decision trees for each user role.
+* `school_management_system.py`: The main working Python program, neatly organized with `# INPUT`, `# PROCESS`, and `# OUTPUT` comments. *(Note: Make sure to rename your `cw10.py` to this exact name before pushing!).*
+
+## How to Run
+1. Ensure you have Python installed on your system.
+2. Open your terminal or Git Bash.
+3. Navigate to the `Classwork-10-School-Management-System` directory.
+4. Run the script using the following command:
+   ```bash
+   python school_management_system.py
+
 ```
 
              / .-
