@@ -88,6 +88,29 @@ This folder contains the following required files:
    ```bash
    python school_management_system.py
 
+---
+
+# Classwork 11 - The Mandelbrot Set 🌌
+
+## Description
+This project implements an algorithm to calculate and generate data for the **Mandelbrot Set**. It maps a 2D grid of pixels to complex numbers on the complex plane and iterates the mathematical function $z_{n+1} = z_{n}^{2} + c$ (starting with $z_0 = 0$). 
+
+The program determines whether each point belongs to the Mandelbrot set by checking if its magnitude escapes to infinity ($|z| > 2$) within a maximum number of iterations. The results (row, column, and number of iterations) are then exported into a CSV file (`mandelbrot.csv`) which can be used later to visualize the fractal.
+
+## Folder Structure
+Located within the repository `UPY-PROGRAMMING-NAME-LAST_NAME-Q2-2026`, this project strictly follows the required directory naming convention:
+
+📁 `Classwork-11-The-Mandelbrot-Set/`
+* 📄 `PPP.txt`: Complete pseudocode written in plain English, utilizing `←` for assignments and `#` for comments without Python-specific syntax.
+* 🖼️ `Flowchart.png`: Visual diagram covering the iteration flow for each method and the decision flow for the modes.
+* 🐍 `mandelbrot_set_math.py`: The working Python implementation, cleanly divided into `# INPUT`, `# PROCESS`, and `# OUTPUT` sections.
+
+## How to Run
+1. Open your terminal or Git Bash.
+2. Navigate to the folder: `cd Classwork-11-The-Mandelbrot-Set`
+3. Run the Python script:
+   ```bash
+   python mandelbrot_set_math.py
 ```
 
              / .-

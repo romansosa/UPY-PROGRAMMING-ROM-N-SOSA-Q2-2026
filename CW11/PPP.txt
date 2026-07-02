@@ -1,0 +1,42 @@
+# Mandelbrot Set CSV Generator
+
+# INPUT: Read configuration parameters
+Open "config.txt" for reading
+For each line in the file:
+    Split line into parameter and value
+    If value contains a decimal point:
+        Convert value to float
+    Else:
+        Convert value to integer
+    Store parameter and value in config dictionary
+Close the configuration file
+
+# Extract main grid settings
+width <- config["ancho"]
+height <- config["alto"]
+max_iter <- config["max_iter"]
+
+# PROCESS & OUTPUT: Prepare the CSV file
+Open "mandelbrot.csv" for writing
+Write the header "row,column,iterations" to the file
+
+# Calculate Mandelbrot iterations for every pixel in the grid
+For each row from 0 to height:
+    For each column from 0 to width:
+        
+        # Map grid position to a point (c) on the complex plane
+        real <- config["real_min"] + (column / width) * (config["real_max"] - config["real_min"])
+        imag <- config["imag_min"] + (row / height) * (config["imag_max"] - config["imag_min"])
+        c <- complex number(real, imag)
+        
+        # Initialize variables for the Mandelbrot formula
+        z <- 0 + 0j
+        iterations <- 0
+        
+        # Iterate formula until it escapes the boundary or hits the limit
+        While absolute value of z <= 2 AND iterations < max_iter:
+            z <- (z * z) + c
+            iterations <- iterations + 1
+            
+        # Write the result for this pixel to the CSV
+        Write row, column, and iterations to the output file
