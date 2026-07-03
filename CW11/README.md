@@ -3,7 +3,7 @@ Nombre del estudiante: Román Alonso Sosa Fiesco
 
 IA utilizada: Gemini
 
-Fecha de uso: 2026-07-
+Fecha de uso: 2026-07-02
 
 Propósito: Redactar el README.md
 

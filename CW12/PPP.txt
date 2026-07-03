@@ -1,0 +1,30 @@
+# INPUT
+Read lines from "config.txt"
+FOR EACH line IN config file:
+    Extract parameter and value
+    Store them in config dictionary
+
+Read lines from "mandelbrot.csv"
+Remove the first line (header)
+
+$max_iter ← config["max_iter"]$
+$width ← config["ancho"]$
+$height ← config["alto"]$
+
+# PROCESS
+$img ← Create a new HSV image with dimensions (width, height)$
+
+FOR EACH line IN csv_data:
+    $row, column, iterations ← split line by comma and convert to integers$
+    
+    IF iterations = max_iter
+        $brightness ← 40$
+    ELSE
+        $brightness ← integer part of ((iterations / max_iter) * 255)$
+        
+    Set pixel at (column, row) in img to color (brightness, 255, 255)
+
+# OUTPUT
+Convert img to RGB format
+Save image as "mandelbrot.png"
+Display "DONE"

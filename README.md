@@ -111,6 +111,32 @@ Located within the repository `UPY-PROGRAMMING-NAME-LAST_NAME-Q2-2026`, this pro
 3. Run the Python script:
    ```bash
    python mandelbrot_set_math.py
+
+---
+
+# Classwork 12 - The Mandelbrot Set Visualization 🌌🖼️
+
+## Description
+This project builds upon the mathematical calculations from Classwork 11 to generate a visual representation of the **Mandelbrot Set**. It reads the previously generated dataset (`mandelbrot.csv`) and uses the Python Imaging Library (PIL/Pillow) to map the iteration data into a 2D image.
+
+The program converts the number of iterations it took for each complex number to escape into a grayscale brightness value (from `0`/black for points inside the set, to `255`/white for points that escaped quickly). The final output is a rendered image (`mandelbrot.png`) revealing the fractal's structure.
+
+## Folder Structure
+Located within the repository `UPY-PROGRAMMING-NAME-LAST_NAME-Q2-2026`, this project strictly follows the required directory naming convention:
+
+📁 `Classwork-12-The-Mandelbrot-Set/`
+* 📄 `PPP.txt`: Complete pseudocode written in plain English, utilizing `←` for assignments and `#` for comments without Python-specific syntax.
+* 🖼️ `Flowchart.png`: Visual diagram covering the iteration flow for each method and the decision flow for the three modes.
+* 🐍 `mandelbrot_set_vis.py`: The working Python implementation, cleanly divided into `# INPUT`, `# PROCESS`, and `# OUTPUT` sections.
+
+## How to Run
+1. Open your terminal or Git Bash.
+2. Ensure you have the Pillow library installed by running: `pip install Pillow`
+3. Navigate to the folder: `cd Classwork-12-The-Mandelbrot-Set`
+4. Run the Python script:
+   ```bash
+   python mandelbrot_set_vis.py
+
 ```
 
              / .-
