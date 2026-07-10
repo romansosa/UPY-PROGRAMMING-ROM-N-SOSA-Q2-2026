@@ -1,38 +1,34 @@
-#INPUT
-rol = input("Ingrese el rol sin guión ni dígito verificador (ej. 201012341): ")
+class DigitoApocrifo(Exception):
+    pass
 
-#PROCESS
-rol_invertido = ""
-for i in range(len(rol) - 1, -1, -1):
-    rol_invertido = rol_invertido + rol[i]
+check = True
 
-
-multiplicadores = [2, 3, 4, 5, 6, 7]
-suma_total = 0
-indice = 0
-
-for digito_str in rol_invertido:
-    digito_num = int(digito_str)
-    multiplicador_actual = multiplicadores[indice]
+while check:
+    try:
+        rol = input("Escribe el rol: ")
+        rol_sin_digito, digito = rol.split("-")
+        check = False 
     
-    suma_total = suma_total + (digito_num * multiplicador_actual)
+    except ValueError:
+        print("Rol no válido, debe tener 11 dígitos y el último separado por un guión")
+
+inverso = rol_sin_digito[::-1]
+
+secuencia = [2,3,4,5,6,7]
+suma = 0
+
+for index in range(len(inverso)):
+    numero = int(inverso[index])
+    suma += numero * secuencia [index % 6]
+
+resultado = suma % 11
+
+verificador = 11 - resultado
+
+try: 
+    if verificador != digito:
+        raise DigitoApocrifoError
+except DigitoApocrifoError as e:
+        print("Digito verificador apocrifo")
     
-    
-    indice = indice + 1
-    if indice == len(multiplicadores):
-        indice = 0
-
-modulo = suma_total % 11
-
-resultado_resta = 11 - modulo
-
-if resultado_resta == 11:
-    digito_verificador = "0"
-elif resultado_resta == 10:
-    digito_verificador = "K"
-else:
-    digito_verificador = str(resultado_resta)
-
-#OUTPUT
-print("El dígito verificador calculado es:", digito_verificador)
-print("Rol completo:", rol + "-" + digito_verificador)
+print(f"{rol_sin_digito}-{verificador}")
