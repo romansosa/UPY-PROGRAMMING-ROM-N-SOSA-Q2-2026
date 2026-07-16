@@ -165,6 +165,34 @@ Located within the repository `UPY-PROGRAMMING-NAME-LAST_NAME-Q2-2026`, this pro
    python cw08.py
    python cw09.py
 
+---
+
+# Classwork 14 - Error Handling Part II 🛡️
+
+## Description
+This project continues the implementation of robust error handling and input validation in Python, focusing on complex data structures, file I/O operations, and image processing. It revisits three previous assignments (CW10, CW11, and CW12) to prevent runtime crashes by using `try...except` blocks.
+
+The implementations handle standard Python exceptions (such as `FileNotFoundError`, `ValueError`, and `IndexError`) and introduce **Custom Exceptions** inherited from the base `Exception` class to enforce specific business rules, including:
+* **CW10**: `UsuarioNoExisteError`, `MateriaNoExisteError`, and `CalificacionInvalidaError` for role-based grading validation.
+* **CW11**: `ConfiguracionMalFormadaError` and `DimensionInvalidaError` for file reading and parameter parsing.
+* **CW12**: `DimensionInconsistenteError` and `FormatoCSVIncorrectoError` for pixel mapping and CSV data rendering.
+
+## Folder Structure
+Located within the repository `UPY-PROGRAMMING-ROM-N-SOSA-Q2-2026`, this project strictly follows the required directory naming convention:
+
+📁 `Classwork-14-Error-Handling/`
+* 🐍 `cw10.py`: The error-handled version of the School Management System.
+* 🐍 `CW11.py`: The error-handled version of the Mandelbrot Set math generator.
+* 🐍 `CW12.py`: The error-handled version of the Mandelbrot Set visualization.
+
+## How to Run
+1. Navigate to the folder: `cd Classwork-14-Error-Handling`
+2. Run any of the Python scripts: 
+   ```bash
+   python cw10.py
+   python CW11.py
+   python CW12.py   
+
 ```
 
              / .-
