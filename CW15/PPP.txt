@@ -1,0 +1,32 @@
+# Store animated sorting execution
+
+# INPUT
+$numbers \leftarrow$ generate a list of 10 random integers between 0 and 100
+
+# OUTPUT (Initial)
+Display "Before sort: " + numbers
+
+# PROCESS
+# Configure the canvas scale based on the length and the maximum value of the numbers
+$n \leftarrow$ length of numbers
+
+# Apply Insertion Sort logic
+loop $i$ from 1 to $n - 1$:
+    $j \leftarrow i$
+    
+    while $j > 0$ and the number at $j-1$ is greater than the number at $j$:
+        # Highlight elements before swapping
+        draw bars on the canvas highlighting positions $j-1$ and $j$
+        
+        # Swap the elements
+        swap the number at $j$ with the number at $j-1$
+        
+        # Highlight elements after swapping
+        draw bars on the canvas highlighting the newly swapped positions
+        
+        $j \leftarrow j - 1$
+
+# OUTPUT (Final)
+Draw all the final bars on the canvas in their default color
+Show the final rendered canvas
+Display "After sort: " + numbers

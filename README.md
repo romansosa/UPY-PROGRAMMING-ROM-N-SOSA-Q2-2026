@@ -193,6 +193,31 @@ Located within the repository `UPY-PROGRAMMING-ROM-N-SOSA-Q2-2026`, this project
    python CW11.py
    python CW12.py   
 
+---
+
+# Classwork 15 - Sorting Algorithms 📊
+
+## Description
+This project implements three fundamental sorting algorithms: Bubble Sort, Selection Sort, and Insertion Sort. It features both standard sorting functions and animated, step-by-step visualizers for each algorithm using a canvas drawing library to represent the array's elements as bars while they are being sorted.
+
+The Python script contains seven required functions: `bubble_sort`, `insertion_sort`, `selection_sort`, `draw_bars`, `bubble_sort_animated`, `insertion_sort_animated`, and `selection_sort_animated`.
+
+## Folder Structure
+Located within the repository `UPY-PROGRAMMING-NAME-LAST_NAME-Q2-2026`, this project strictly follows the required directory naming convention:
+
+📁 `Classwork-15-Sorting-Algorithms/`
+* 📄 `sorting_algorithms_ppp.txt`: Complete pseudocode written in plain English outlining the sorting logic, written prior to the code.
+* 🖼️ `sorting_algorithms_flowchart.png`: Visual diagram covering the logic flow for the sorting algorithms matching the PPP.
+* 🐍 `sorting_algorithms.py`: The working Python implementation containing the 7 specified functions and visualizations, cleanly divided into `# INPUT`, `# PROCESS`, and `# OUTPUT` sections.
+
+## How to Run
+1. Open your terminal or Git Bash.
+2. Navigate to the folder: `cd Classwork-15-Sorting-Algorithms`
+3. Ensure that your graphical dependencies (`stddraw.py` and `color.py`) are in the same folder if required.
+4. Run the Python script:
+   ```bash
+   python sorting_algorithms.py   
+
 ```
 
              / .-
